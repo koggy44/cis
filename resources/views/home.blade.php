@@ -33,7 +33,7 @@
             <div class="col-md-4">
                 <h1>{{$news->title}}</h1><br>
                 <h4>{{$news->briefing}}</h4>
-            <a href="/news/{{$news->id}}">
+            <a href="/{{$news->id}}">
                 <input type="button" class="btn btn-primary btn-sm" value="Read More">
             </a>
             </div>

@@ -37,15 +37,15 @@
 				<div class="form-row">
 					<div class="form-group col-md-6">
 		  				<label>Resident/Non-resident</label>
-		  				<select id="inputState" class="form-control" name="residents">
-		    				<option selected disabled> Choose...</option>
-		      				<option>Resident</option>
-		      				<option>Non-Resident</option>
+		  				<select id="resident" class="form-control" name="residents" onchange="loadResident()">
+		    				<option value="" selected disabled> Choose...</option>
+		      				<option value="1">Resident</option>
+		      				<option value="0">Non-Resident</option>
 		  				</select>
 					</div>
 					<div class="form-group col-md-6">
 		  			<label>Residence</label>
-		  			<select id="inputState" class="form-control" name="residence">
+		  			<select id="placeresidence" class="form-control" name="residence">
 		    			<option selected disabled> Choose...</option>
 		      			<option>Argentina</option>
 		      			<option>Buruburu</option>
@@ -73,4 +73,14 @@
 	</div>
 </div>
 </div>
+
+<script>
+
+	function loadResident(){
+		var value =$('#resident').val();
+		//ajax.get
+		
+	}
+
+</script>
 @endsection

@@ -31,6 +31,6 @@ class HomeController extends Controller
     public function show($id)
     {
         $news= News::find($id);
-        return view('news.news')->with('news', $news);
+        return view('news')->with('news', $news);
     }
 }

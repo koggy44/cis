@@ -1,6 +1,5 @@
-@extends('layout.app')
+@extends('layout2.app')
 @section('content')
-    <div class="wrapper">
-        Logged in as admin
-    </div>
+ 
+<div>hello</div>
 @endsection

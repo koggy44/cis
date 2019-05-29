@@ -14,6 +14,7 @@
 
 Route::resource('reports', 'ReportsController');
 Route::resource('news', 'NewsController');
+Route::resource('incidents', 'IncidentsController');
 
 Auth::routes();
 
@@ -26,4 +27,4 @@ Route::prefix('admin')->group(function(){
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
 
-//Route::get('/news/{news}', 'HomeController@show');
+Route::get('/{news}', 'HomeController@show');
