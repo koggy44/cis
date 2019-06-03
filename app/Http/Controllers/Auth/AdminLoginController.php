@@ -29,13 +29,13 @@ class AdminLoginController extends Controller
 
         if(Auth::guard('admin')->attempt(['username'=>$request->username, 'password'=>$request->password], $request->remember))
         {
-            return redirect()->intended(route('admin.dashboard'));
+            return redirect('/incidents');
         }
         return redirect()->back()->withInput($request->only('username','remember'));
     }
      public function logout()
     {
-        $this->guard('admin')->logout();
-        redirect('/admin/login');
+        Auth::guard('admin')->logout();
+        return redirect('/admin/login');
     }
 }

@@ -11,7 +11,7 @@
       @csrf
   <div class="form-group">
     <label for="exampleFormControlInput1">Registration number</label>
-    <input name="regno" class="form-control" id="exampleFormControlInput1" value="{{ Auth::user()->reg_number}}" >
+    <input name="regno" class="form-control" id="exampleFormControlInput1" value="{{ Auth::user()->reg_number}}" disabled
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1"><strong>Incident type</strong></label>

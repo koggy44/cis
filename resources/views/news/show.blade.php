@@ -5,7 +5,7 @@
 
     <div class="col-lg-8">
 
-        <h1 class="mt-5">{{$news->title}}</h1>
+        <h3 class="mt-5">{{$news->title}}</h3>
 
         <hr>
 
@@ -14,11 +14,11 @@
     <hr>
     <div style="width: 850px;">
         <h4 style="color:orange">In summary</h4>
-        <h4>{{$news->briefing}}</h4>
+        <h5>{{$news->briefing}}</h5>
     </div>
     <hr><br>
     <div style="width: 850px;">
-        <h4>{{$news->full_news}}</h4>
+        <h6>{{$news->full_news}}</h6>
     </div>
     <div>
     <div style="width:100px">

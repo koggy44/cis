@@ -5,8 +5,8 @@
                     <span class="mdl-layout-title" style="color:">Welcome {{ Auth::user()->first_name }}</span>
                     <div class="mdl-layout-spacer"></div>
 
-                    <span class="mdl-layout-title change"><a class=" nav-link text-secondary h6" href="{{ route('logout') }}">{{ __('Log Out') }}</a></span>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    <span class="mdl-layout-title change"><a class=" nav-link text-secondary h6" href="{{ route('admin.logout') }}">{{ __('Log Out') }}</a></span>
+                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST">
                      @csrf
                   </form>
                 </div>
@@ -14,22 +14,20 @@
 
             <div class="demo-drawer mdl-layout__drawer logo-header-background-color">
                 <header class="demo-drawer-header">
-                    <span>  <a href="staff-home.html" class="nav-link text-center" style="color:white;">CAMPUS INCIDENT SYSTEM</a></span>
+                    <span>  <a href="/incidents" class="nav-link text-center" style="color:white;">CAMPUS INCIDENT SYSTEM</a></span>
                 </header>
 
                 <nav class="demo-navigation mdl-navigation sidebar-nav-background">
                     <ul id="navmenu">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Applications</a><span class="darrow">&#9660;</span>
+                        <li><a href="/incidents">View Incidents</a></li>
+                        <li><a href="#">News</a><span class="darrow">&#9660;</span>
                             <ul class="sub1">
-                                <li><a href="all_applications.html">All</a></li>
-                                <li><a href="pending_applications.html">Pending</a></li>
-                                <li><a href="#">Approved</a></li>
-                                <li><a href="#">Rejected</a></li>
+                                <li><a href="/news">All News</a></li>
+                                <li><a href="/news/create">Add News</a></li>
                             </ul>
                         </li>
-                          <li><a href="#">Reports</a></li>
-                        <li><a href="#">Feedback</a></li>
+                          <li><a href="#">Add types of incident</a></li>
+                        <li><a href="#">Add places of incident</a></li>
                     </ul>
                 </nav>
             </div>

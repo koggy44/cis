@@ -28,3 +28,4 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::get('/{news}', 'HomeController@show');
+Route::get('/user/profile/{id}','UserController@show')->middleware('auth:admin');

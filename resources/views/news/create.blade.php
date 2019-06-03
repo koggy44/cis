@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
          <div class="col-lg-8">
-            <h1 class="mt-5">Add news</h1>
+            <h3 class="mt-5">Add news</h3>
         </div>
         <hr>
         <form method="POST" action="/news">

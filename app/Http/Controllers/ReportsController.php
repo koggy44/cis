@@ -46,7 +46,6 @@ class ReportsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'regno'=>'required',
             'type'=>'required',
             'place'=>'required',
             'time_slot'=>'required',
@@ -57,7 +56,7 @@ class ReportsController extends Controller
         //add to database
         $report =new Report;
         $report->user_id = Auth::id();
-        $report->regno = $request->input('regno');
+        $report->regno = auth()->user()->reg_number;
         $report->inct_type = $request->input('type');
         $report->inct_place = $request->input('place');
         $report->time_slot =$request->input('time_slot');

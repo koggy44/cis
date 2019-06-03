@@ -29,7 +29,7 @@ class IncidentsController extends Controller
      */
     public function create()
     {
-        return view('incidents.create');
+        //
     }
 
     /**
@@ -40,27 +40,7 @@ class IncidentsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'regno'=>'required',
-            'type'=>'required',
-            'place'=>'required',
-            'time_slot'=>'required',
-            'description'=>'required'
-            
-        ]);
-
-        //add to database
-        $report =new Report;
-        $report->user_id = Auth::id();
-        $report->regno = $request->input('regno');
-        $report->inct_type = $request->input('type');
-        $report->inct_place = $request->input('place');
-        $report->time_slot =$request->input('time_slot');
-        $report->description = $request->input('description');
-
-        $report->save();
-
-        return redirect('/incidents')->with('success');
+        //
     }
 
     /**

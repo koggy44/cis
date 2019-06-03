@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.app2')
 
 @section('content')
 <div class="container">
@@ -28,16 +28,10 @@
       	 </span>
       	 @endif 
         </div>
+        <div style="margin-top:20px;">
           <input type="submit" class="fadeIn fourth zero-raduis" value="login">
-          @if (Route::has('password.request'))
-            <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('Forgot Your Password?') }}
-            </a>
-         @endif
-         <div>
-  	      <h2>You don't have a account ?</h2>
-  	      <a href="/register"><input type="button" class="fadeIn fourth zero-raduis pc" value="register"></a>
-         </div>
+        </div>
+          
         </form>
   	    
 

@@ -18,7 +18,9 @@
             <tbody>
                 <tr >
                     <td>{{$reports->created_at}}</td>
-                    <td>{{$reports->regno}}</td>
+                    <td>
+                    <a href="/user/profile/{{$reports->user_id}}">{{$reports->regno}}</a> 
+                    </td>
                     <td>{{$reports->inct_type}}</td>
                     
                     <td>{{$reports->inct_place}}</td>
