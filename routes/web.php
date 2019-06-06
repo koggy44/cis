@@ -15,11 +15,13 @@
 Route::resource('reports', 'ReportsController');
 Route::resource('news', 'NewsController');
 Route::resource('incidents', 'IncidentsController');
+Route::resource('pages', 'IncidentTypeController');
 
 Auth::routes();
 
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 Route::get('/home', 'HomeController@index');
+Route::get('/places/{category}', 'PlacesController@show');
 Route::prefix('admin')->group(function(){
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login')->middleware(['guest']);
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');

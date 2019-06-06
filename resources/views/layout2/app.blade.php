@@ -18,8 +18,8 @@
     </head>
     <body style="background-color:#ececec;">
         @include('inc.navbar1')
-        @include('inc.message')
             <main class="mdl-layout__content mdl-color--grey-100">
+                @include('inc.message')
                 @yield('content')
            </main>
         </div>

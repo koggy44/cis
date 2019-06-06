@@ -37,21 +37,16 @@
 				<div class="form-row">
 					<div class="form-group col-md-6">
 		  				<label>Resident/Non-resident</label>
-		  				<select id="resident" class="form-control" name="residents" onchange="loadResident()">
+		  				<select id="resident" class="form-control" name="residents">
 		    				<option value="" selected disabled> Choose...</option>
 		      				<option value="1">Resident</option>
-		      				<option value="0">Non-Resident</option>
+		      				<option value="2">Non-Resident</option>
 		  				</select>
 					</div>
 					<div class="form-group col-md-6">
 		  			<label>Residence</label>
-		  			<select id="placeresidence" class="form-control" name="residence">
+		  			<select id="places" class="form-control" name="residence">
 		    			<option selected disabled> Choose...</option>
-		      			<option>Argentina</option>
-		      			<option>Buruburu</option>
-		      			<option>New hostels</option>
-		      			<option>Maringo</option>
-		      			<option>Ruwenzori</option>
 		  			</select>
 					</div>
 				</div>
@@ -76,11 +71,29 @@
 
 <script>
 
-	function loadResident(){
-		var value =$('#resident').val();
-		//ajax.get
-		
-	}
+	$('#resident').change(function(e) {
+		var value = e.target.value
+		$.ajax({
+			url: 'http://127.0.0.1:8000/places/' + value,
+			method: 'GET',
+			contentType: 'appplication/json',
+			success: function(data) {
+			
+			var html = "<option selected disabled> Choose...</option> ";
+
+			for (var i=0; i < data.length; i++) {
+				var myHtml =  "<option value='" + data[i]['id'] + "'>" + data[i]['place'] + "</option> ";
+				html += myHtml;
+			}
+
+			$('#places').html(html);
+
+			},
+			error: function (error) {
+				console.log(error)
+			}
+		})
+	})
 
 </script>
 @endsection

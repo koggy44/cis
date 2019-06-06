@@ -12,11 +12,12 @@
        
     </head>
     <body style="background-color:#ececec;">
+        <script src="{{asset("js/app.js")}}"></script>
         @include('inc.navbar3')
         
             @include('inc.message')
         @yield('content')
         
-        <script src="{{asset("js/app.js")}}"></script>
+        
     </body>
 </html>

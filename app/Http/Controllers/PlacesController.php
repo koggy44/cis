@@ -3,29 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Report;
-use App\IncidentType;
 use App\Place;
-use DB;
-use Auth;
 
-class ReportsController extends Controller
+class PlacesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     public function index()
     {
-        
-        $reports=Report::where('user_id',Auth::id())->get();
-        return view('reports.index')->with('reports',$reports);
+        //
     }
 
     /**
@@ -35,9 +24,7 @@ class ReportsController extends Controller
      */
     public function create()
     {
-        $places= Place::all();
-        $inct_type= IncidentType::all();
-        return view('reports.create')->with('inct_type', $inct_type)->with('places', $places);
+        //
     }
 
     /**
@@ -48,26 +35,7 @@ class ReportsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'type'=>'required',
-            'place'=>'required',
-            'time_slot'=>'required',
-            'description'=>'required'
-            
-        ]);
-
-        //add to database
-        $report =new Report;
-        $report->user_id = Auth::id();
-        $report->regno = auth()->user()->reg_number;
-        $report->inct_type = $request->input('type');
-        $report->inct_place = $request->input('place');
-        $report->time_slot =$request->input('time_slot');
-        $report->description = $request->input('description');
-
-        $report->save();
-
-        return redirect('/reports')->with('success');
+        //
     }
 
     /**
@@ -76,9 +44,12 @@ class ReportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($category)
     {
         //
+        $places = new Place;
+        $myPlaces = $places->where('category', '=', $category)->get();
+        return response()->json($myPlaces);
     }
 
     /**
