@@ -19,6 +19,7 @@
             @endforeach
         @else
             <div class="wrapper">
+                <h4>no news</h4>
             </div>
         @endif
     </div>

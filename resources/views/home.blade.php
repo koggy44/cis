@@ -27,8 +27,9 @@
             </div>
          </div>
         @if (count($news) >0)
-        @foreach ($news as $news)
-            <div class="row" style="height:250px; margin-top: 20px; margin-bottom:20px; margin-left:20px"> 
+         <div class="row" style="height:250px; margin-top: 20px; margin-bottom:20px; margin-left:20px">
+            @foreach ($news as $news)
+               
             <div class="col-md-4">
                 <h1>{{$news->title}}</h1><br>
                 <h4>{{$news->briefing}}</h4>
@@ -36,12 +37,9 @@
                 <input type="button" class="btn btn-primary btn-sm" value="Read More">
             </a>
             </div>
-            
-            </div>
-        @endforeach
-            <div>
-                <h1>view all</h1>
-            </div>
+ 
+            @endforeach
+        </div>
             
         @else
         <div class="wrapper">

@@ -17,6 +17,8 @@ Route::resource('news', 'NewsController');
 Route::resource('incidents', 'IncidentsController');
 Route::resource('pages', 'IncidentTypeController');
 Route::resource('places', 'ResidentsController');
+Route::resource('view', 'ViewallController');
+
 
 Auth::routes();
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
