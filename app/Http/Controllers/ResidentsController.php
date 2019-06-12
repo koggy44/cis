@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Report;
+use App\Place;
 
-class IncidentsController extends Controller
+class ResidentsController extends Controller
 {
     public function __construct()
     {
@@ -18,8 +18,7 @@ class IncidentsController extends Controller
      */
     public function index()
     {
-        $reports=Report::latest('id')->get();
-        return view('incidents.index')->with('reports', $reports);
+        //
     }
 
     /**
@@ -29,7 +28,7 @@ class IncidentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('places.create');
     }
 
     /**
@@ -40,7 +39,19 @@ class IncidentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request,[
+            'place'=>'required',
+            'radio'=>'required',
+            
+        ]);
+
+        $place =new Place;
+        $place->place = $request->input('place');
+        $place->category = $request->input('radio');
+
+        $place->save();
+
+        return redirect('/places');
     }
 
     /**

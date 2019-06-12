@@ -15,7 +15,13 @@
     <tr>
         <th scope="row">{{$type->id}}</th>
         <td>{{$type->inct_type}}</td>
-        <td><button class="btn btn-danger">Delete</button></td>
+        <td>
+          <form action="/pages/{{$type->id}}" method="POST">
+            {{method_field('DELETE')}}
+            @csrf
+          <button class="btn btn-danger">Delete</button>
+          </form>
+        </td>
     </tr>
     @endforeach
   </tbody>

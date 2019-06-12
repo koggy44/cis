@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-      <div>  
+      <div class="container">  
         <div align="center" style="background-color:#5cdb95; backround-image: url('{{ asset('images/egerton2.jpg') }}')" class="homediv">
     
             <div align="center" style=" color:white">
@@ -27,9 +27,8 @@
             </div>
          </div>
         @if (count($news) >0)
-         <div class="row" style="height:250px; margin-top: 20px; margin-bottom:20px; margin-left:20px">
-            @foreach ($news as $news)
-               
+        @foreach ($news as $news)
+            <div class="row" style="height:250px; margin-top: 20px; margin-bottom:20px; margin-left:20px"> 
             <div class="col-md-4">
                 <h1>{{$news->title}}</h1><br>
                 <h4>{{$news->briefing}}</h4>
@@ -37,9 +36,12 @@
                 <input type="button" class="btn btn-primary btn-sm" value="Read More">
             </a>
             </div>
- 
-            @endforeach
-        </div>
+            
+            </div>
+        @endforeach
+            <div>
+                <h1>view all</h1>
+            </div>
             
         @else
         <div class="wrapper">

@@ -74,7 +74,7 @@
 	$('#resident').change(function(e) {
 		var value = e.target.value
 		$.ajax({
-			url: 'http://127.0.0.1:8000/places/' + value,
+			url: 'http://127.0.0.1:8000/place/' + value,
 			method: 'GET',
 			contentType: 'appplication/json',
 			success: function(data) {

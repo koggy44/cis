@@ -95,6 +95,7 @@ class IncidentTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $type= IncidentType::find($id)->delete();
+        return redirect('/pages'); 
     }
 }

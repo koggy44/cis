@@ -27,7 +27,7 @@
                             </ul>
                         </li>
                           <li><a href="/pages/create">Add types of incident</a></li>
-                        <li><a href="#">Add places of Residence</a></li>
+                        <li><a href="/places/create">Add places of Residence</a></li>
                     </ul>
                 </nav>
             </div>
