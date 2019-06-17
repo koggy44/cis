@@ -16,8 +16,8 @@
               <label for="exampleFormControlSelect1"><strong>Incident type</strong></label>
               <select class="form-control" id="exampleFormControlSelect1" name="type">
                 <option selected disabled>choose...</option>
-                @foreach ($inct_type as $inct_type)
-                <option>{{$inct_type->inct_type}}</option>
+                @foreach ($type as $type)
+                <option value="{{$type->id}}">{{$type->type}}</option>
                 @endforeach
               </select>
           </div>
@@ -26,7 +26,7 @@
     <select class="form-control" id="exampleFormControlSelect2" name="place">
       <option selected disabled>choose...</option>
           @foreach ($places as $place)
-              <option>{{$place->place}}</option>
+            <option>{{$place->place}}</option>
           @endforeach
     </select>
   </div>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-8" style="background-color:black; color:white; margin-top: 20px; margin-bottom:10px; height:700px">
+        <div class="col-8" style="background-color:black; color:white; margin-top: 20px; margin-bottom:10px; min-height:700px">
             <div class="col-lg-8">
                 <h1 class="mt-5">{{$news->title}}</h1>
                 <hr>

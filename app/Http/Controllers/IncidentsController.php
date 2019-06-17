@@ -18,7 +18,8 @@ class IncidentsController extends Controller
      */
     public function index()
     {
-        $reports=Report::latest('id')->get();
+        $reports=Report::with('incident_type')->latest('id')->get();
+        // return $reports;
         return view('incidents.index')->with('reports', $reports);
     }
 

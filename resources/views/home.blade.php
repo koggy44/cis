@@ -30,7 +30,7 @@
          <div class="row" style="height:250px; margin-top: 20px; margin-bottom:20px; margin-left:20px">
             @foreach ($news as $news)
                
-            <div class="col-md-4">
+            <div class="col-md">
                 <h1>{{$news->title}}</h1><br>
                 <h4>{{$news->briefing}}</h4>
             <a href="/{{$news->id}}">
@@ -39,6 +39,16 @@
             </div>
  
             @endforeach
+            <div class="col-md">
+                <div class="wrapper">
+                    <a href="/view"><img src="{{url('images/play-btn.png')}}" height="50px" width="50px">
+                        View all
+                    </a>
+                </div>
+            </div>
+            <div>
+
+            </div>
         </div>
             
         @else

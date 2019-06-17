@@ -15,7 +15,7 @@
 Route::resource('reports', 'ReportsController');
 Route::resource('news', 'NewsController');
 Route::resource('incidents', 'IncidentsController');
-Route::resource('pages', 'IncidentTypeController');
+Route::resource('pages', 'CategoryController');
 Route::resource('places', 'ResidentsController');
 Route::resource('view', 'ViewallController');
 

@@ -14,7 +14,7 @@
     @foreach ($types as $type)
     <tr>
         <th scope="row">{{$type->id}}</th>
-        <td>{{$type->inct_type}}</td>
+        <td>{{$type->name}}</td>
         <td>
           <form action="/pages/{{$type->id}}" method="POST">
             {{method_field('DELETE')}}

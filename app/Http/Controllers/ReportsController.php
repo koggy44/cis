@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Report;
-use App\IncidentType;
+use App\Category;
 use App\Place;
 use DB;
 use Auth;
@@ -36,8 +36,8 @@ class ReportsController extends Controller
     public function create()
     {
         $places= Place::all();
-        $inct_type= IncidentType::all();
-        return view('reports.create')->with('inct_type', $inct_type)->with('places', $places);
+        $type= Category::all();
+        return view('reports.create')->with('type', $type)->with('places', $places);
     }
 
     /**
@@ -60,7 +60,7 @@ class ReportsController extends Controller
         $report =new Report;
         $report->user_id = Auth::id();
         $report->regno = auth()->user()->reg_number;
-        $report->inct_type = $request->input('type');
+        $report->category_id = $request->input('type');
         $report->inct_place = $request->input('place');
         $report->time_slot =$request->input('time_slot');
         $report->description = $request->input('description');

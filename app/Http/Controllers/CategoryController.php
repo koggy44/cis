@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\IncidentType;
+use App\Category;
+use Session;
 
-class IncidentTypeController extends Controller
+class CategoryController extends Controller
 {
     public function __construct()
     {
@@ -18,7 +19,7 @@ class IncidentTypeController extends Controller
      */
     public function index()
     {
-        $types=IncidentType::all();
+        $types=Category::all();
         return view('pages.all-incident-types')->with('types', $types);
     }
 
@@ -45,10 +46,12 @@ class IncidentTypeController extends Controller
         ]);
 
         //add to database
-        $type =new IncidentType;
-        $type->inct_type =  $request->input('type');
+        $type =new Category;
+        $type->name =  $request->input('type');
 
         $type->save();
+        
+        Session::flash('success','Incident type added successfully');
 
         return redirect('/pages')->with('success');
     }
@@ -95,7 +98,7 @@ class IncidentTypeController extends Controller
      */
     public function destroy($id)
     {
-        $type= IncidentType::find($id)->delete();
+        $type= Category::find($id)->delete();
         return redirect('/pages'); 
     }
 }

@@ -17,7 +17,7 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('regno');
-            $table->string('inct_type');
+            $table->integer('category_id')->unsigned();
             $table->string('inct_place');
             $table->string('time_slot');
             $table->string('description');
