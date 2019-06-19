@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Report;
 use Session;
 
 class CategoryController extends Controller
@@ -64,7 +65,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $reports=Report::where('category_id',$id)->get();
+        return view('pages.category')->with('reports', $reports)->withCategories(Category::all());
     }
 
     /**

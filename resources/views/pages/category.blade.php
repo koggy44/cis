@@ -1,10 +1,9 @@
 @extends('layout2.app')
 
 @section('content')
-
-    <div class="row">
+ <div class="row">
         <div class="col-10">
-            @if(count($reports)>0)
+            
             <div class="container">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -17,7 +16,7 @@
                             <th>Description</th>
                         </tr>
                     </thead>
-            
+                    @if(count($reports)>0)
                     @foreach($reports as $report)
                     <tbody>
                         <tr >
@@ -32,13 +31,16 @@
                         </tr>
                     </tbody>
                     @endforeach
+                    @else
+                    <tbody>
+                        <tr>
+                            <td colspan="6">no inidents reported</td>
+                        <tr>
+                    </tbody>
+                    @endif
                 </table>
             </div>
-            @else
-            <div class="wrapper">
-                <h1>No incidents reported yet</h1>
-            </div>
-            @endif
+           
         </div>
         
         <div class="col-2">
@@ -60,5 +62,5 @@
            </table>
         </div>
     </div>
-    
+
 @endsection

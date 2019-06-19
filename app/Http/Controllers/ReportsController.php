@@ -49,7 +49,7 @@ class ReportsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'type'=>'required',
+            'type'=>'required|integer',
             'place'=>'required',
             'time_slot'=>'required',
             'description'=>'required'

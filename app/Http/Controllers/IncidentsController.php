@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Report;
+use App\Category;
 
 class IncidentsController extends Controller
 {
@@ -18,9 +19,10 @@ class IncidentsController extends Controller
      */
     public function index()
     {
-        $reports=Report::with('incident_type')->latest('id')->get();
-        // return $reports;
-        return view('incidents.index')->with('reports', $reports);
+        $reports=Report::latest('id')->get();
+        $categories=Category::all();
+
+        return view('incidents.index')->with('reports', $reports)->with('categories', $categories);
     }
 
     /**

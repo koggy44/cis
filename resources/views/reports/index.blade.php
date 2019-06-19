@@ -29,7 +29,7 @@
                     @foreach($reports as $reports)
                         <tr >
                             <td>{{$reports->created_at}}</td>
-                            <td>{{$reports->inct_type}}</td>
+                            <td>{{$reports->category->name}}</td>
                             <td>{{$reports->inct_place}}</td>
                             <td>{{$reports->time_slot}}</td>
                             <td>{{$reports->description}}</td>
