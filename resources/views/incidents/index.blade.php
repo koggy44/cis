@@ -15,6 +15,7 @@
                             <th>Incident place</th>
                             <th>Time slot</th>
                             <th>Description</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
             
@@ -29,6 +30,24 @@
                             <td>{{$report->inct_place}}</td>
                             <td>{{$report->time_slot}}</td>
                             <td>{{$report->description}}</td>
+
+                            @if($report->completed == 1)
+                                <td> <input type="checkbox"  checked disabled></td>
+                            @endif
+                            @if($report->completed == 0)
+                            <td>
+                            <form method="POST" action="/updateincident">
+                           
+                                @csrf
+
+                            <input type="hidden" name="report_id" value="{{$report->id}}" />
+                            <label class="checkbox" for="checkbox">
+
+                                <input type="checkbox" name="completed" onchange="this.form.submit()">
+                            </label>
+                            </form>
+                            </td>
+                            @endif
                         </tr>
                     </tbody>
                     @endforeach

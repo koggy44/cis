@@ -19,12 +19,12 @@ class IncidentsController extends Controller
      */
     public function index()
     {
-        $reports=Report::latest('id')->get();
+        $reports=Report::where("completed", 0)->latest('id')->get();
         $categories=Category::all();
 
         return view('incidents.index')->with('reports', $reports)->with('categories', $categories);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -65,7 +65,7 @@ class IncidentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -75,9 +75,13 @@ class IncidentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $report = Report::find($request->report_id);
+        $report->completed = 1;
+        $report->save();
+
+        return redirect()->back();
     }
 
     /**

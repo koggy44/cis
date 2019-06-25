@@ -37,6 +37,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/about">About CIS</a>
                    </li>
+                   <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="/userhelp">Help</a>
+                   </li>
          </ul>
             <ul>
               <li class="nav-item dropdown">

@@ -21,6 +21,7 @@ class CreateReportsTable extends Migration
             $table->string('inct_place');
             $table->string('time_slot');
             $table->string('description');
+            $table->boolean('completed')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references("id")->on('users')->onDelete('cascade');

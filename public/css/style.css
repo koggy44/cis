@@ -11,7 +11,7 @@ html, body {
 }
 
 .sidebar-nav-background{
-  background-color: black;
+  background-color: white;
 }
 .demo-drawer {
   border: none;
@@ -112,9 +112,9 @@ ul#navmenu a {
   display: block;
   width: 100%;
   line-height: 25px;
-  border-bottom: 1px solid #4B8202;
+  border-bottom: 1px solid rgb(17, 17, 16);
   padding: 10px 20px;
-  color: #fff;
+  color: black;
   margin: 0;
   font-size: 14px;
   }

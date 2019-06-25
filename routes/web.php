@@ -19,6 +19,12 @@ Route::resource('pages', 'CategoryController');
 Route::resource('places', 'ResidentsController');
 Route::resource('view', 'ViewallController');
 
+Route::post('/updateincident', 'IncidentsController@update');
+Route::get('/userhelp','HelpController@user');
+Route::get('/adminhelp','HelpController@admin');
+
+Route::get('/reportsgenerated','GenerateReportController@generate');
+
 
 Auth::routes();
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
