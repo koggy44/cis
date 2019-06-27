@@ -52,5 +52,5 @@
     </div>
 
 </div>
-    
+    @include('inc.footer2')  
 @endsection

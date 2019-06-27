@@ -25,5 +25,12 @@
                 <button type="submit" class="btn btn-primary btn-block">Update News</button>
             </div>
         </form>
+        <div style="float:right; margin-top:-50px">
+            <form action="/news/{{$news->id}}" method="POST">
+            {{method_field('DELETE')}}
+            @csrf
+          <button class="btn btn-danger">Delete News</button>
+          </form>
+        </div>
 </div>
 @endsection

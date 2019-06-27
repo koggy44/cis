@@ -20,9 +20,6 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About CIS</a>
-            </li>
          </ul>
             @endif
             @else
@@ -34,9 +31,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/reports/create">Report Incident</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/about">About CIS</a>
-                   </li>
                    <li class="nav-item">
                     <a class="nav-link" target="_blank" href="/userhelp">Help</a>
                    </li>

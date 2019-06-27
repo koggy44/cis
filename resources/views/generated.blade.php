@@ -4,19 +4,19 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset("css/app.css")}}">
+        <link rel="stylesheet" href="{{asset("css/print.css")}}">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <title>{{config('app.name','cis')}}</title>
     </head>
-    <body>
-        <div class="container">
+    <body id="body">
+        <div class="container print-only">
             <h1 class="title">CIS REPORTS</h1>
             <hr>
             <hr>
 
             <h4>Number of registered users : <u>{{$users->count()}} people</u></h4>
-            <hr>
-                <h4>Total Number of incidents reported : {{$incidents->count()}}</h4>
+            
             <hr>
             <div class="wrapper">
             <table class="table">
@@ -36,7 +36,11 @@
                     <td>{{$category->reports->count()}}</td>
                 </tr> 
                 @endforeach
-                
+
+                 <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>{{$incidents->count()}}</strong></td>
+                </tr> 
             </tbody>
             </table>
             </div>
@@ -54,21 +58,32 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($places as $place)
                 <tr>
-                    <td>cbd</td>
-                    <td>52</td>
+                <td>{{$place->name}}</td>
+                    <td>{{$place->total}}</td>
                 </tr>
-                <tr>
-                    <td>buruburu</td>
-                    <td>32</td>
-                </tr>
-                <tr>
-                    <td>gate</td>
-                    <td>62</td>
-                </tr>
+                @endforeach
             </tbody>
             </table>
         </div>
         </div>
+        <div class="w3-right footer">
+            <button id="print" class="w3-button w3-blue">PRINT REPORT</button>
+        </div>
+        <script src="{{asset("js/app.js")}}"></script>
+        <script>
+            $('#print').click(function(){
+
+                window.print();
+                return false;
+            });
+
+            $(window).on('load', function(){
+                console.log('loaded');
+                window.print();
+            });
+
+        </script>
     </body>
 </html>

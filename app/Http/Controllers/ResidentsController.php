@@ -18,7 +18,8 @@ class ResidentsController extends Controller
      */
     public function index()
     {
-        //
+        $places=Place::all();
+        return view('places.index')->with('places', $places);
     }
 
     /**
@@ -96,6 +97,7 @@ class ResidentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $place= Place::find($id)->delete();
+        return redirect('/places'); 
     }
 }

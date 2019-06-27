@@ -20,15 +20,15 @@
                 <nav class="demo-navigation mdl-navigation sidebar-nav-background">
                     <ul id="navmenu">
                         <li><a href="/incidents">New Incidents</a></li>
-                        <li><a href="#">News</a><span class="darrow">&#9660;</span>
-                            <ul class="sub1">
+                       
+                           
                                 <li><a href="/news">All News</a></li>
                                 <li><a href="/news/create">Add News</a></li>
-                            </ul>
-                        </li>
-                          <li><a href="/pages/create">Add types of incident</a></li>
+                          <li><a href="/pages/create">Add Incident type</a></li>
+                          <li><a href="/pages">All incident types</a></li>
                         <li><a href="/places/create">Add places of Residence</a></li>
-                        <li><a href="/reportsgenerated">Report</a></li>
+                        <li><a href="/places">All places of residence</a></li>
+                        <li><a target="_blank" href="/reportsgenerated">Report</a></li>
                         <li><a target="_blank" href="/adminhelp">Help</a></li>
                     </ul>
                 </nav>
