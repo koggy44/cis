@@ -20,7 +20,7 @@
                         <li><a href="#starting">1. Getting started</a></li>
                         <li><a href="#homepage">2. Home page navigation</a></li>
                         <li><a href="#reporting">3. Reporting incident</a></li>
-                        <li><a href="#">4. Viewing news</a></li>
+                        <li><a href="#news">4. Reading news and updates</a></li>
 
                     </ul>
                 </nav>
@@ -82,8 +82,33 @@
                         <p class="card-text">
                             The home page has an easy to use interface. <br>
                             Most of the parts in the homepage are self explanatory.
+                            To report an incident: <br>
+                                 Click on the report incident button on the navbar. <br>
+                                 Fill in the details provided in the form accordingly. <br>
+                                 Finally click send button.
                             <div>
                                 <img src="{{url('images/reportinc.PNG')}}" width="900px" height="400px">
+                            </div>
+                        </p>
+                        
+                    </div>
+
+
+                </div>
+
+                <!--Reading news and updates-->
+                <div class="card" id="news">
+                    <h2 class="card-header">Reading news and updates</h2>
+                    <div class="card-body">
+
+                        <p class="card-text">
+                            The news and updates are provided on the home page. <br>
+                            You can view the last three updates there or view all the updated <br>
+                             and latest news by clicking the button ‘view all’. <br>
+                             <br>
+                             Click the “Read more” button to read the full news.
+                            <div>
+                                <img src="{{url('images/news button.PNG')}}" width="900px" height="400px">
                             </div>
                         </p>
                         
